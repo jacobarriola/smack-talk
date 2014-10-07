@@ -1,3 +1,6 @@
-@import "0-plugins/plugins-directory";
+// Plugins
+@import "plugins/plugins-directory";
 
-body {background-color: red;}
+.hello {
+	@include outer-container;
+}
