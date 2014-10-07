@@ -246,11 +246,25 @@ input[type="submit"] {
   vertical-align: middle;
   white-space: nowrap; }
 
-.hello {
+.wrapper {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto; }
-  .hello:after {
+  .wrapper:after {
     content: "";
     display: table;
     clear: both; }
+  .wrapper .content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%; }
+    .wrapper .content:last-child {
+      margin-right: 0; }
+  .wrapper .sidebar {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    .wrapper .sidebar:last-child {
+      margin-right: 0; }
