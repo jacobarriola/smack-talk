@@ -1,0 +1,167 @@
+// Plugins
+@import "plugins/plugins-directory";
+
+
+.hero {
+
+	background: url('../img/hero-bg.jpg');
+  	background-size: cover;
+  	background-repeat: no-repeat;
+  	background-position: center;
+  	padding-top: 100px;
+  	padding-bottom: 300px;
+  	margin-bottom: 50px;
+  	position: relative;
+  	width: 100%;
+  	height: auto;
+
+}
+	header {
+	@include outer-container;
+	text-align: center;
+
+	}
+
+.wrapper {
+	@include outer-container;
+
+	.content {
+		@include span-columns(12);
+		@include media($mobile){
+			@include span-columns(9);
+		}
+	}
+
+	.sidebar {
+		@include span-columns(12);
+				@include media($mobile){
+			@include span-columns(3);
+		}
+	}
+}
+
+
+.bullets {
+  $icon-bullet-size: 3.5em;
+
+  overflow: auto;
+  margin-bottom: $base-line-height;
+
+  // change ".three-col-bullet" class to this for two bullet layout
+  .two-col-bullet {
+    @include media($large-screen) {
+      @include span-columns(6);
+      @include omega(2n);  
+    } 
+  }
+  
+  .three-col-bullet {
+    @include media($large-screen) {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+  }
+
+  // change ".three-col-bullet" class to this for four bullet layout
+  .four-col-bullet {
+    @include media($large-screen) {
+      @include span-columns(3);
+      @include omega(4n);
+    }
+  }
+
+  .bullet-icon {
+    float: left;
+    background: $base-accent-color;
+    padding: $icon-bullet-size /4;
+    border-radius: 50%;
+    width: $icon-bullet-size;
+    height: $icon-bullet-size;
+  }
+
+  .bullet-icon-1 {
+    background: $base-accent-color;
+  }
+
+  .bullet-icon-2 {
+    background: adjust-hue($base-accent-color, -50);
+  }
+
+  .bullet-icon-3 {
+    background: adjust-hue($base-accent-color, -140);
+  }
+
+  .bullet-content {
+    margin-left: $icon-bullet-size *1.4;
+    margin-bottom: 2em;
+  }
+
+  h2 {
+    font-size: $icon-bullet-size /2.5;
+    padding-top: $icon-bullet-size /7;
+    margin-bottom: $icon-bullet-size /6;
+    border-bottom: 1px solid transparentize($base-font-color, .8);
+    display: inline-block;
+  }
+}
+
+.smack {
+  $smack-gutter: 1.4em;
+  $smack-image-padding: .7em;
+  $smack-image-width: 4em;
+  $smack-color: $base-font-color;
+  $smack-background: lighten($base-accent-color, 15);
+  $smack-detail-color: transparentize($smack-color, .5);
+  $smack-image-vert-alignment: top;
+
+  display: table;
+  width: 100%;
+  margin-bottom: $base-spacing;
+  padding-bottom: 1em;
+  border-bottom: 1px solid transparentize($smack-color, .9);
+
+  .smack-image,
+  .smack-content {
+    display: table-cell;
+    vertical-align: $smack-image-vert-alignment;
+  }
+
+  .smack-image {
+    padding-right: $smack-gutter;
+
+    > img {
+      width: $smack-image-width;
+      height: auto;
+      border-radius: $base-border-radius;
+      padding: $smack-image-padding;
+      background: $smack-background;
+      display: block;
+      max-width: none;
+    }
+
+    .smack-reverse-order & {
+      padding-right: 0;
+      padding-left: 10px;
+    }
+  }
+
+  .smack-content {
+    width: 100%;
+
+    h1 {
+      font-size: 1em;
+      margin-bottom: .5em;
+    }
+
+    p {
+      margin-bottom: .5em;
+    }
+
+    p.smack-detail {
+      font-style: italic;
+      font-size: .9em;
+      color: $smack-detail-color;
+    }
+  }
+}
+
